@@ -30,3 +30,9 @@ LOG_FILE: 日志文件路径，为空则仅输出至控制台。</br>
 
 ## 感谢
 获取直播源地址使用的douyu.py、huya.py及bilibili.py代码来自于<a href="https://github.com/wbt5/real-url" target="_blank">Real-Url</a>项目，在此表示由衷的感谢！
+
+
+## 增加docker 
+docker build -t live-real-api:v1 .
+docker run -d -p5000:5000 live-real-api:v1
+
