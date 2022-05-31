@@ -34,7 +34,8 @@ LOG_FILE: 日志文件路径，为空则仅输出至控制台。</br>
 
 ## 增加docker 
 ```
-wget https://raw.githubusercontent.com/linsongze/real-url-proxy-server/master/Dockerfile
-docker build -t live-real-api:v1 .
-docker run -d -p5000:5000 live-real-api:v1
+1、git clone https://github.com/linsongze/real-url-proxy-server.git
+2、cd real-url-proxy-server
+3、docker build -t live-real-api:v1 .
+4、docker run -d -p5000:5000 live-real-api:v1
 ```
