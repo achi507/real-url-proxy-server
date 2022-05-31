@@ -222,7 +222,7 @@ async def serviceWithRate(request,provider,room,bit_rate):
 
         try:
             if room not in douyu_processor_map.keys():
-                douyu_processor_map[room] = DouYuRealUrlExtractor(room, self.auto_refresh_interval)
+                douyu_processor_map[room] = DouYuRealUrlExtractor(room, auto_refresh_interval)
 
             real_url = douyu_processor_map[room].get_real_url(bit_rate)
             if real_url is not None:
@@ -289,7 +289,7 @@ async def serviceWithRate(request,provider,room,bit_rate):
             log.logger.error("Failed to proxy huya hls stream! Error: %s", str(e))
     rsp = "Not Found"
     rsp = rsp.encode("gb2312")
-    return response.text(body=rsp,headers=crosHeaders.update({
+    return response.html(body=rsp,headers=crosHeaders.update({
                     'Content-type': "text/html; charset=gb2312",
                     'Content-Length': str(len(rsp))
                 }),status=404)

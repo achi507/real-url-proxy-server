@@ -117,16 +117,20 @@ class DouYu:
     def get_real_url(self):
         ret = {}
         error, key, url = self.get_pre()
+        if key is not None and key != '':
+            ret['flv'] = "http://akm-tct.douyucdn.cn/live/{}.flv?uuid=".format(key)
         if error == 0:
-            ret['900p'] = url
+            #ret['900p'] = url
+            pass
         elif error == 102:
             raise Exception('房间不存在')
         elif error == 104:
             raise Exception('房间未开播')
         else:
             key, url = self.get_js()
+            if key is not None and key != '':
+                ret['flv'] = "http://akm-tct.douyucdn.cn/live/{}.flv?uuid=".format(key)
             ret['2000p'] = url
-        ret['flv'] = "http://akm-tct.douyucdn.cn/live/{}.flv?uuid=".format(key)
         return ret
 
 
