@@ -4,7 +4,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     pip3 install PyExecJS -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install requests -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install sanic -i https://pypi.tuna.tsinghua.edu.cn/simple && \
-    apk add git
 #工作目录
 WORKDIR /app
 #复制代码
