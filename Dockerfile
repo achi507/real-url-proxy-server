@@ -13,4 +13,4 @@ EXPOSE 5000
 #暴露目录
 VOLUME ["/app"]
 #运行项目
-CMD ["python3","/app/real-url-proxy-server/real-url-proxy-server.py","-p","5000"]
+CMD ["python3","/app/real-url-proxy-server/webserver.py","-p","5000"]
