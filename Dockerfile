@@ -1,7 +1,6 @@
-FROM python:3.9.13-alpine3.16
+FROM python:3.8.0-slim-buster
 #安装requests PyExecJs 依赖
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && apk update && apk --no-cache add build-base && \
-    pip3 install PyExecJS -i https://pypi.tuna.tsinghua.edu.cn/simple && \
+RUN pip3 install PyExecJS -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install requests -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     pip3 install sanic -i https://pypi.tuna.tsinghua.edu.cn/simple
 #工作目录
